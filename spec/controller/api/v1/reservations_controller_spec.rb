@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Api::V1::ReservationsController, type: :controller do
+RSpec.describe Api::V1::ReservationsController type: :controller do
   describe 'GET #index' do
     it 'returns a successful response' do
       get :index
@@ -30,7 +30,6 @@ RSpec.describe Api::V1::ReservationsController, type: :controller do
       post :create, params: invalid_params
       expect(response).to have_http_status(:unprocessable_entity)
     end
-  end
 
   describe 'GET #history' do
     it 'returns a successful response' do
@@ -45,4 +44,3 @@ RSpec.describe Api::V1::ReservationsController, type: :controller do
       expect(response).to have_http_status(:ok)
     end
   end
-end

@@ -24,7 +24,6 @@ class Api::V1::ReservationsController < ApiController
         render json: @history
     end 
 
-
     def upcoming
     @upcoming = Reservation.where('date >= ?', Time.now)
     render json: @upcoming
