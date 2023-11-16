@@ -17,12 +17,4 @@ ActiveAdmin.register Reservation do
     column :user_id
     actions
   end
-
-  # other actions, filters, etc.
-
-  controller do
-    def scoped_collection
-      super.includes(:user) # Include associated data as needed
-    end
-  end
 end

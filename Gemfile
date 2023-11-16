@@ -50,3 +50,5 @@ gem 'active_model_serializers'
 gem 'sprockets'
 gem 'sass-rails'
 gem 'activeadmin'
+gem "active_skin"
+gem 'activeadmin_quill_editor'

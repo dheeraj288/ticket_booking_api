@@ -36,3 +36,8 @@ class Api::V1::ReservationsController < ApiController
     	params.require(:reservation).permit(:date,:number_of_guests, :phone, :name, :email, :user_id)
     end
 end
+
+
+
+
+
