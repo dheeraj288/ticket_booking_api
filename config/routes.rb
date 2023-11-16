@@ -8,12 +8,14 @@ Rails.application.routes.draw do
 
   get '/member_details' => 'members#index'
 
-  namespace :api do
-    namespace :v1 do 
-      resources :reservations do
-        collection do
-          get 'history'
-          get 'upcoming'
+    namespace :api do
+      namespace :v1 do 
+        namespace :admin do
+        resources :reservations do
+          collection do
+            get 'history', to: 'reservations#history'
+            get 'upcoming', to: 'reservations#upcoming'
+          end
         end
       end
     end

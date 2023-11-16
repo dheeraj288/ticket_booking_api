@@ -1,3 +1,4 @@
+module Admin
 class Api::V1::ReservationsController < ApiController
 	def index
 		@reservations = Reservation.all
@@ -20,13 +21,13 @@ class Api::V1::ReservationsController < ApiController
     end
 
     def history
-        @history = Reservation.where('date <= ?', Time.now)
-        render json: @history
+         @reservations = Reservation.history
+         render :index
     end 
 
     def upcoming
-    @upcoming = Reservation.where('date >= ?', Time.now)
-    render json: @upcoming
+     @reservations = Reservation.upcoming
+      render :index
   end
 
     private
@@ -34,4 +35,5 @@ class Api::V1::ReservationsController < ApiController
     def reservation_params
     	params.require(:reservation).permit(:date,:number_of_guests, :phone, :name, :email, :user_id)
     end
+end
 end
