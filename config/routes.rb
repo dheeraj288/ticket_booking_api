@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1 do 
-        namespace :admin do
         resources :reservations do
           collection do
             get 'history', to: 'reservations#history'
@@ -19,5 +18,4 @@ Rails.application.routes.draw do
         end
       end
     end
-  end
 end

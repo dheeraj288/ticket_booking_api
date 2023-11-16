@@ -1,4 +1,4 @@
-module Admin
+
 class Api::V1::ReservationsController < ApiController
 	def index
 		@reservations = Reservation.all
@@ -22,12 +22,12 @@ class Api::V1::ReservationsController < ApiController
 
     def history
          @reservations = Reservation.history
-         render :index
+         render json: @reservations
     end 
 
     def upcoming
-     @reservations = Reservation.upcoming
-      render :index
+        @reservations = Reservation.upcoming
+        render json: @reservations
   end
 
     private
@@ -35,5 +35,4 @@ class Api::V1::ReservationsController < ApiController
     def reservation_params
     	params.require(:reservation).permit(:date,:number_of_guests, :phone, :name, :email, :user_id)
     end
-end
 end
