@@ -50,5 +50,9 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.middleware.insert_after ActionDispatch::Session::CookieStore, Warden::Manager do |manager|
+  manager.default_strategies :your_devise_strategy
+  manager.failure_app = Devise::FailureApp
+end
 
 end
