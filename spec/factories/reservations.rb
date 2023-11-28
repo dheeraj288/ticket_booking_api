@@ -8,3 +8,5 @@ FactoryBot.define do
     association :user, factory: :user
   end
 end
+
+

@@ -39,5 +39,6 @@ module TicketBooking
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Session::CookieStore
     config.middleware.use config.session_store, config.session_options
+    config.middleware.insert_after Warden::Manager, Warden::JWTAuth::Middleware
   end
 end

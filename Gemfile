@@ -33,6 +33,10 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'warden', '1.2.9'
 end
+group :test do
+    gem 'jsonapi-rspec'
+    #...
+end
 
 group :development do
   gem 'listen', '~> 3.2'
