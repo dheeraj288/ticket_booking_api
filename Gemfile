@@ -33,11 +33,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'warden', '1.2.9'
 end
-group :test do
-    gem 'jsonapi-rspec'
-    #...
-end
-
 group :development do
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
