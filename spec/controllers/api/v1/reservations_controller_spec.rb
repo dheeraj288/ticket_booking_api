@@ -65,7 +65,7 @@ RSpec.describe Api::V1::ReservationsController, type: :controller do
       get :history
       expect(response).to have_http_status(:ok)
     end
-    # Add more tests for the behavior of the history action
+    
   end
 
   describe 'GET #upcoming' do
