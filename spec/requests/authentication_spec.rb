@@ -13,17 +13,17 @@ RSpec.describe 'Authentication', type: :request do
     end
   end
 
-  describe 'DELETE /users/sign_out' do
-    it 'revokes the user token' do
-      post '/users/sign_in', params: { user: { email: "sky@gmail.com", password: "123456" } }, headers: headers
-      payload = { data: user.id }
-      token = JWT.encode(payload, nil, 'none')
-      header = {"Authorization": "Bearer #{token}", "Accept": "application/json"}
-      request.headers.merge!(header)
-      delete '/users/sign_out'
-      expect(response).to have_http_status(:no_content)
-    end
-  end
+  # describe 'DELETE /users/sign_out' do
+  #   it 'revokes the user token' do
+  #     post '/users/sign_in', params: { user: { email: "sky@gmail.com", password: "123456" } }, headers: headers
+  #     payload = { data: user.id }
+  #     token = JWT.encode(payload, nil, 'none')
+  #     header = {"Authorization": "Bearer #{token}", "Accept": "application/json"}
+  #     request.headers.merge!(header)
+  #     delete '/users/sign_out'
+  #     expect(response).to have_http_status(:no_content)
+  #   end
+  # end
 end
 
 

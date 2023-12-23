@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'carts/create'
+  get 'carts/destroy'
+  get 'food_items/index'
+  get 'food_items/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
@@ -18,4 +22,8 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :categories
+     resources :food_items, only: [:index, :show]
+      resources :carts, only: [:index, :create, :destroy]
 end
